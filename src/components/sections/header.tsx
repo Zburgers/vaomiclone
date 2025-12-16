@@ -3,6 +3,7 @@
 import { Button } from '@/components/ui/button';
 import { motion } from 'framer-motion';
 import { InfinityIcon, ArrowUpRight } from 'lucide-react';
+import Link from 'next/link';
 
 const navLinks = [
   { name: 'About', href: '#' },
@@ -14,28 +15,28 @@ const navLinks = [
 export default function Header() {
   return (
     <motion.header 
-      className="absolute top-0 z-50 w-full p-4"
+      className="fixed top-6 left-0 right-0 z-50 mx-auto w-full max-w-5xl px-4"
       initial={{ y: -100, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
-      transition={{ duration: 0.5, delay: 2 }}
+      transition={{ duration: 0.5, delay: 0.5 }}
     >
-      <div className="mx-auto flex max-w-7xl items-center justify-between">
+      <div className="flex items-center justify-between rounded-full border border-white/10 bg-black/50 px-6 py-3 backdrop-blur-md shadow-lg">
         <div className="flex items-center gap-2">
-          <InfinityIcon className="size-8" />
-          <span className="text-xl font-bold">Vaomi AI</span>
+          <InfinityIcon className="size-6 text-white" />
+          <span className="text-lg font-bold text-white">Vaomi AI</span>
         </div>
-        <nav className="hidden items-center gap-6 md:flex">
+        <nav className="hidden items-center gap-8 md:flex">
           {navLinks.map((link) => (
-            <a
+            <Link
               key={link.name}
               href={link.href}
-              className="text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
+              className="text-sm font-medium text-white/70 transition-colors hover:text-white"
             >
               {link.name}
-            </a>
+            </Link>
           ))}
         </nav>
-        <Button className="group hidden items-center gap-2 bg-accent/80 text-black hover:bg-accent md:flex">
+        <Button size="sm" className="group hidden items-center gap-2 rounded-full bg-[#1db954] hover:bg-[#1db954]/80 text-black md:flex font-semibold">
           <span>Book a FREE call</span>
           <ArrowUpRight className="size-4 transition-transform group-hover:rotate-45" />
         </Button>

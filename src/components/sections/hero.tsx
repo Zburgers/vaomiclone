@@ -1,7 +1,6 @@
 'use client';
 import { motion } from 'framer-motion';
 import { Button } from '@/components/ui/button';
-import Header from '@/components/sections/header';
 import Particles from '@/components/particles';
 import { ArrowUpRight } from 'lucide-react';
 
@@ -67,16 +66,16 @@ const Typewriter = () => {
 export default function Hero() {
   return (
     <section className="relative flex h-screen w-full flex-col items-center justify-center overflow-hidden">
-      <Header />
       <Particles
           className="absolute inset-0 z-0"
-          quantity={5000}
+          quantity={300}
           color="#ffffff"
+          refresh
         />
       <div className="z-10 flex flex-col items-center gap-6 text-center">
         <Typewriter />
         <motion.p
-          className="max-w-xl text-lg text-muted-foreground md:text-xl"
+          className="text-lg text-muted-foreground md:text-xl"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 2.2 }}
@@ -89,7 +88,7 @@ export default function Hero() {
           transition={{ duration: 0.5, delay: 2.4 }}
         >
           <Button
-            className="group rounded-md border-white/30 bg-white/10 px-6 py-3 text-base font-semibold text-white transition-all duration-300 hover:border-white hover:bg-white/20"
+            className="group rounded-full bg-white px-8 py-6 text-base font-semibold text-black transition-all duration-300 hover:bg-white/90"
           >
             Book a FREE Call
             <ArrowUpRight className="ml-2 size-4 transition-transform group-hover:rotate-45" />
