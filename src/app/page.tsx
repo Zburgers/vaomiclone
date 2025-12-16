@@ -1,4 +1,5 @@
 import Hero from '@/components/sections/hero';
+import HelpedRaise from '@/components/sections/helped-raise';
 import LogoMarquee from '@/components/sections/logo-marquee';
 import BrokenSystem from '@/components/sections/broken-system';
 import ConvictionSplit from '@/components/sections/conviction-split';
@@ -10,6 +11,7 @@ export default function Home() {
   return (
     <main className="flex flex-col">
       <Hero />
+      <HelpedRaise />
       <LogoMarquee />
       <BrokenSystem />
       <ConvictionSplit />

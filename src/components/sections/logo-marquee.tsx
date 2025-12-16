@@ -2,21 +2,21 @@
 import { motion } from 'framer-motion';
 
 const logos = [
-  'Sequoia',
-  'Tiger Global',
-  'GV',
-  'Andreessen Horowitz',
-  'Accel',
-  'Lightspeed',
-  'Insight Partners',
-  'Kleiner Perkins',
+  'Forbes',
+  'TechCrunch',
+  'Bloomberg',
+  'The New York Times',
+  'Wired',
+  'Fast Company',
+  'Business Insider',
+  'VentureBeat',
 ];
 
 export default function LogoMarquee() {
   const duplicatedLogos = [...logos, ...logos];
 
   return (
-    <div className="relative w-full overflow-hidden border-y border-white/10 py-8">
+    <div className="relative w-full overflow-hidden border-y border-white/10 bg-background py-8">
       <div className="absolute inset-y-0 left-0 z-10 w-24 bg-gradient-to-r from-background to-transparent" />
       <motion.div
         className="flex"
